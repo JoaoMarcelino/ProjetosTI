@@ -7,12 +7,12 @@ else
     bar(alpha,h);
 end
 soma=sum(h);
-prob=h/soma;
+prob=h/soma;.
 
 val=entropia(prob);
 
 HLen=hufflen(h);
-worseval=HLen'*h/sum(h);
+worseval=sum
 
 fprintf("Entropia: %.2f\n",val);
 fprintf("Hufflen: %.2f\n",worseval);

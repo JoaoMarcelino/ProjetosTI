@@ -12,16 +12,17 @@ lyrics=regexprep(lyrics,"[^a-zA-Z0-9]","");
 %helper(lyrics,1);
 
 % Landscape
-%disp(helper(landscape));
+%helper(landscape);
 
 %MRI
-%disp(helper(MRI));
+%helper(MRI);
 
 %MRIBW
-%disp(helper(MRIBW));
+%helper(MRIBW);
 
 %Audio
-%disp(helper(aud));
+%helper(aud);
+
 
 
 
