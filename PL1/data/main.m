@@ -10,6 +10,8 @@ lyrics=fscanf(file,"%s");
 fclose(file);
 lyrics=regexprep(lyrics,"[^a-zA-Z0-9]","");
 %helper(lyrics,1);
+c=Conjuntos(lyrics);
+disp(c);
 
 % Landscape
 %helper(landscape);
@@ -22,6 +24,7 @@ lyrics=regexprep(lyrics,"[^a-zA-Z0-9]","");
 
 %Audio
 %helper(aud);
+
 
 
 
