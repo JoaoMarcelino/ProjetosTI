@@ -18,7 +18,7 @@ lyrics=regexprep(lyrics,"[^a-zA-Z0-9]","");
 
 %MRI
 %helper(MRI);
-%MRI2=double(MRI(:,1:2:end-1)*2^8+double(MRI(:,2:2:end));
+%MRI2=double(MRI(:,1:2:end-1))*2^8+double(MRI(:,2:2:end));
 %helper(MRI2);
 
 %MRIBW
@@ -34,7 +34,6 @@ target=[6 8 9 7;2 4 9 9; 4 9 1 4];
 alfabeto=0:9;
 step=1;
 a=rotina(query,target,alfabeto,step);
-disp(a);
 
 
 
