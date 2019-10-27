@@ -1,28 +1,51 @@
-function r=rotina(query,target,alfa,step)
-    rpos=1;
-    rpos_fnl=size(query);
-    cpos=1;
-    cpos_fnl=size(query,2);
+function r = rotina(query,target,alfa,step)
+
+    % Query - imagem a procurar
+    % Target - imagem alvo
+    % Alfa - Alfabeto do target
     
-    n_repeticoes=(length(target)-length(query)+1)*(size(target)-size(query)+1);
-    for k=1:step:n_repeticoes
-        r=target(rpos:rpos_fnl,cpos:cpos_fnl);
+    % Calculo da row final e da column final atraves da funcao size que
+    % retorna um vetor com [numerolinhas,numerocolunas]
+    row = 1;
+    rowFinal = size(query,1);
+    column = 1;
+    columnFinal = size(query,2);
+    
+    % Numero de tentativas wait wtf
+    n_repeticoes = (length(target) - length(query)+step) * (size(target) - size(query) + step); %lmao
+    
+    for k = 1 : n_repeticoes
+        r=target(row:rowFinal,column:columnFinal);
         disp(r);
-        cpos= cpos + step;
-        cpos_fnl= cpos_fnl + step;
+        column= column + step;
+        columnFinal= columnFinal + step;
         
-        
-        if cpos_fnl>size(target,2)
-            cpos=1;
-            cpos_fnl=size(query,2);
-            rpos= rpos + step;
-            rpos_fnl= rpos_fnl + step;
+        % ok shiny o marcelo tem autismo e em vez de meter um for dentro de
+        % um for decidiu calcular o total de vezes e assim q chega ao fim
+        % puxa para baixo
+        % #lmao
+        % temos de encontrar uma maneira melhor de fazer isto :)
+        % but at least this works x)
+        if columnFinal>size(target,2)
+            column=1;
+            columnFinal=size(query,2);
+            row= row + step;
+            rowFinal= rowFinal + step;
         end
         
     end
     
-    %X=entropia(query/sum(query));
+    %X=entropia(query/sum(query));  
     %y=entropia(t);
     %conjunta=double(X(:,1:2:end-1))*2^8+double(Y(:,2:2:end));
-
+    
+    
+    
+    
+    % Eu ate queria arranjar esta merda mas nunca vi uma fiesta de codigo
+    % tao grande ja sao 4:10 e o marcelino esta a falar de socos e de
+    % basket comigo no discord sobre os 76rs e eu a comentar esta merda
+    % toda, ainda n sei se tento ler isto ou nao, oh well, guess i'll try,
+    % ja que comentei as outras 200 linhas super detalhadamente nao posso
+    % parar assim #CleanAssCommentsDoJosphze
 end

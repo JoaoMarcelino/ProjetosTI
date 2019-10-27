@@ -18,8 +18,8 @@ lyrics=regexprep(lyrics,"[^a-zA-Z0-9]","");
 
 %MRI
 %helper(MRI);
-MRI2 = double(MRI(:,1:2:end-1))*2^8 + double(MRI(:,2:2:end));   
-helper(MRI2,1);
+%MRI2 = double(MRI(:,1:2:end-1))*2^8 + double(MRI(:,2:2:end));   
+%helper(MRI2,1);
 
 
 %MRIBW
@@ -31,11 +31,11 @@ helper(MRI2,1);
 
 
 
-query=[2 6;4 9];
-target=[6 8 9 7;2 4 9 9; 4 9 1 4];
-alfabeto=0:9;
-step=1;
-a=rotina(query,target,alfabeto,step);
+query = imread("mi_data\query.bmp");
+target = imread("mi_data\target1.bmp");
+alfabeto = 0:9; %xd
+step = 15;
+a = rotina(query,target,alfabeto,step);
 
 
 
