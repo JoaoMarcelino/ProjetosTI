@@ -1,11 +1,5 @@
 function r = rotina(query,target,alfa,step)
 
-    % Query - imagem a procurar
-    % Target - imagem alvo
-    % Alfa - Alfabeto do target
-    
-    % Calculo da row final e da column final atraves da funcao size que
-    % retorna um vetor com [numerolinhas,numerocolunas]
     row = 1;
     rowFinal = size(query,1);
     column = 1;

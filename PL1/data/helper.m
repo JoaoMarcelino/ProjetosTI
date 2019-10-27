@@ -1,43 +1,30 @@
-function valor = helper(file,~)
+function valorEntropia = helper(input,~)
     
     % A rotina helper retorna a entropia do ficheiro e mostra a
     % distribuicao estatistica do mesmo
 
-    % A rotina histograma calcula:
-    % frequencias - Matriz x/1 das frequencias do alfabeto 
-    % alfabeto - Conjunto dos simbolos que aparecem pelo menos uma vez
-    [frequencias,alfabeto] = histograma(file);                                          
+    [matrizFrequencias,alfabeto] = histograma(input);                                          
     
-    % Se for usado um auxiliar para alem do file, cria um grafico com o -
-    % alfabeto no eixo dos X
     if (nargin ~= 1)
-        bar(frequencias);
+        bar(matrizFrequencias);
         set(gca, 'XTick', 1:length(alfabeto), 'XTickLabel', alfabeto(:));
-    
-    % Caso contrario cria um grafico com o alfabeto default do bar()    
+       
     else
-        bar(alfabeto, frequencias);
+        bar(alfabeto, matrizFrequencias);
     end
 
-    % Calcula o total de simbolos presentes em sum para criar uma matriz
-    % com as probabilidades de cada simbolo
-    soma = sum(frequencias);
-    probabilidades = frequencias / soma;
+    totalFrequencias = sum(matrizFrequencias);
+    probabilidades = matrizFrequencias / totalFrequencias;
     
-    % Utiliza a matriz das probabilidades para calcular a entropia(valor)
-    valor = entropia(probabilidades);
+    valorEntropia = entropia(probabilidades);
     
     % A funcao hufflen() recebe um vetor das frequencias e retorna um
-    % vetor com o numero de bits necessario para os codificar
-    bitsHufflen = hufflen(frequencias);
+    % vetor com o numero de bits necessario para codificar cada simbolo
+    bitsHufflen = hufflen(matrizFrequencias);
     
-    % Calculamos o total de bits para codificar tudo ao multiplicar as duas
-    % matrizes e depois dividimos pelo total de simbolos para calcular o
-    % numero de bits do codigo de Huffman
-    totalBits = bitsHufflen' * frequencias;
-    valorHuffman = totalBits / soma;
+    totalBits = bitsHufflen' * matrizFrequencias;
+    valorHuffman = totalBits / totalFrequencias;
     
-    % Display da Entropia e do valor medio dos codigos de Huffman
-    fprintf("Entropia: %.2f\n", valor);
-    fprintf("Hufflen: %.2f\n\n", valorHuffman);
+    fprintf("Entropia: %.2f\n", valorEntropia);
+    fprintf("Hufflen: %.2f\n\n", valorHuffman); 
 end
