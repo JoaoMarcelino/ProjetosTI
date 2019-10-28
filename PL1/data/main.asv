@@ -28,57 +28,39 @@ lyrics=regexprep(lyrics,"[^a-zA-Z0-9]","");
 %Audio
 %helper(aud);
 
+
+
+alfabeto = 0:9; %xd
 step = 15;
 query = imread("mi_data\query.bmp");
-i = 1;
-arrayInfoMutua = zeros(8,1);
-
+i = 0;
+arrayInfoMutua = zeros(2,8);
 targetOriginal = imread("mi_data\target_original.bmp");
-infoMutuaTargetOriginal = rotina(query,targetOriginal,step,i);
+infoMutuaTargetOriginal = rotina(query,targetoriginal,alfabeto,step);
 arrayInfoMutua(i) = infoMutuaTargetOriginal;
 i = i+1;
-disp(infoMutuaTargetOriginal);
-
 targetInv = imread("mi_data\target_inverted.bmp");
-infoMutuaTargetInv = rotina(query,targetInv,step,i);
-arrayInfoMutua(i) = infoMutuaTargetInv;
+infoMutuaTargetInv = rotina(query,targetinv,alfabeto,step);
+arrayInfoMutua(i) = infoMutuaTargetOriginal;
 i = i+1;
-disp(infoMutuaTargetInv);
-
 targetContrast = imread("mi_data\target_lightning_contrast.bmp");
-infoMutuaTargetContrast = rotina(query,targetContrast,step,i);
-arrayInfoMutua(i) = infoMutuaTargetContrast;
+infoMutuaTargetContrast = rotina(query,targetcontrast,alfabeto,step);
+arrayInfoMutua(i) = infoMutuaTargetOriginal;
 i = i+1;
-disp(infoMutuaTargetContrast);
-
 targetNoise = imread("mi_data\target_noise.bmp");
-infoMutuaTargetNoise = rotina(query,targetNoise,step,i);
-arrayInfoMutua(i) = infoMutuaTargetNoise;
-i = i+1;
-disp(infoMutuaTargetNoise);
+infoMutuaTargetNoise = rotina(query,targetnoise,alfabeto,step);
 
 target1 = imread("mi_data\target1.bmp");
-infoMutuaTarget1 = rotina(query,target1,step,i);
-arrayInfoMutua(i) = infoMutuaTarget1;
-i = i+1;
-disp(infoMutuaTarget1);
+infoMutuaTarget1 = rotina(query,target1,alfabeto,step);
 
 target2 = imread("mi_data\target2.bmp");
-infoMutuaTarget2 = rotina(query,target2,step,i);
-arrayInfoMutua(i) = infoMutuaTarget2;
-i = i+1;
-disp(infoMutuaTarget2);
+infoMutuaTarget2 = rotina(query,target2,alfabeto,step);
 
 target3 = imread("mi_data\target3.bmp");
-infoMutuaTarget3 = rotina(query,target3,step,i);
-arrayInfoMutua(i) = infoMutuaTarget3;
-i = i+1;
-disp(infoMutuaTarget3);
+infoMutuaTarget3 = rotina(query,target3,alfabeto,step);
 
 target4 = imread("mi_data\target4.bmp");
-infoMutuaTarget4 = rotina(query,target4,step,i);
-arrayInfoMutua(i) = infoMutuaTarget4;
-disp(infoMutuaTarget4);
+infoMutuaTarget4 = rotina(query,target4,alfabeto,step);
 
 sort(arrayInfoMutua, 'descend')
-disp(arrayInfoMutua);
+disp(sort);
