@@ -13,13 +13,13 @@ lyrics=regexprep(lyrics,"[^a-zA-Z0-9]","");
 %helper(lyrics2,1);
 
 % Landscape
-%landscape2=double(landscape(:,1:2:end-1))*2^8+double(landscape(:,2:2:end));
-%helper(landscape2);
+% landscape2=double(landscape(:,1:2:end-1))*2^8+double(landscape(:,2:2:end));
+% helper(landscape2);
 
 %MRI
 %helper(MRI);
 %MRI2 = double(MRI(:,1:2:end-1))*2^8 + double(MRI(:,2:2:end));   
-%helper(MRI2,1);
+%helper(MRI2);
 
 
 %MRIBW
@@ -27,7 +27,7 @@ lyrics=regexprep(lyrics,"[^a-zA-Z0-9]","");
 
 %Audio
 %helper(aud);
-
+% 
 step = 15;
 query = imread("mi_data\query.bmp");
 i = 1;
@@ -76,7 +76,7 @@ i = i+1;
 disp(infoMutuaTarget3);
 
 target4 = imread("mi_data\target4.bmp");
-infoMutuaTarget4 = rotina(query,target4,step,i);
+infoMutuaTarget4 = rotina(query,target4,step);
 arrayInfoMutua(i) = infoMutuaTarget4;
 disp(infoMutuaTarget4);
 
