@@ -6,7 +6,7 @@ function r = rotina(query,target,alfa,step)
     columnFinal = size(query,2);
     
     % Numero de tentativas wait wtf
-    n_repeticoes = (length(target) - length(query)+step) * (size(target) - size(query) + step); %lmao
+    %n_repeticoes = (length(target) - length(query)+step) * (size(target) - size(query) + step); %lmao
     
     for k = 1 : n_repeticoes
         r=target(row:rowFinal,column:columnFinal);

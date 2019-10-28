@@ -32,10 +32,10 @@ lyrics=regexprep(lyrics,"[^a-zA-Z0-9]","");
 
 
 query = imread("mi_data\query.bmp");
-target = imread("mi_data\target1.bmp");
+target = imread("mi_data\target_original.bmp");
 alfabeto = 0:9; %xd
 step = 15;
-a = rotina(query,target,alfabeto,step);
+a = rotinav2(query,target,alfabeto,step);
 
 
 
