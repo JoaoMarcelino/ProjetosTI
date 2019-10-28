@@ -32,6 +32,7 @@
     end
     figure(i);
     imshow(target);
+    figure(i);
     rectangle('Position', [x, y, columnFinal, rowFinal], 'LineWidth', 2, 'LineStyle', '--', 'EdgeColor', 'r');
     
 end
