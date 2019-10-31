@@ -8,12 +8,11 @@ function [matrizFrequencias,alfabeto] = histograma(input,alfabeto)
         
     end
     
-    %matrizFrequencias = zeros(size(alfabeto));
-    
    matrizFrequencias = histcounts(input, [alfabeto;alfabeto(numel(alfabeto))+1]);
    matrizFrequencias=matrizFrequencias';
 
-   %     for k = 1 : length(alfabeto)
+%  matrizFrequencias = zeros(size(alfabeto));
+%     for k = 1 : length(alfabeto)
 %         vecPosicoes = find(input == alfabeto(k));
 %         matrizFrequencias(k) = length(vecPosicoes);
 %     end

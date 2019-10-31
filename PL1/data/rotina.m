@@ -1,5 +1,5 @@
     function maxInfo = rotina(query,target,step,i)
-
+    
     rowFinal = size(query,1);
     columnFinal = size(query,2);
     entropiaQuery = helperRotina(query);
