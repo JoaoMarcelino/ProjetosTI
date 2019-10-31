@@ -15,7 +15,7 @@ disp("Lyrics.txt");subplot(2,3,1);helper(lyrics,1);
 disp("Landscape");subplot(2,3,2);helper(landscape); 
 disp("MRI");subplot(2,3,3);helper(MRI);
 disp("MRI Black/White");subplot(2,3,4);helper(MRIBW);
-disp("Audio");subplot(2,3,5);helper(aud);
+disp("Audio");subplot(2,3,5);helper(aud,2);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 lyrics2=double(lyrics(:,1:2:end-1))*2^8+double(lyrics(:,2:2:end));
@@ -87,3 +87,4 @@ arrayInfoMutua(i) = infoMutuaTarget4;
 disp(infoMutuaTarget4);
 arrayInfoMutua=sort(arrayInfoMutua,'descend');
 disp(arrayInfoMutua);
+

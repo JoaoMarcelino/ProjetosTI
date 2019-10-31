@@ -28,15 +28,12 @@ function valorEntropia = helper(input,aux)
     totalBits = bitsHufflen' * matrizFrequencias;
     valorHuffman = totalBits / totalFrequencias;
 
-%     calcular X^2
-%     bitsHufflen1=bitsHufflen.^2; 
-%     calcular E(X^2)
+%     bitsHufflen1=bitsHufflen.*bitsHufflen; 
 %     valorHuffman1=(bitsHufflen1' * matrizFrequencias)/totalFrequencias;
-%     carcular E(X^2)-E(X)^2
 %     y1=valorHuffman1-valorHuffman.^2;
-
     y=var(bitsHufflen,matrizFrequencias);
     fprintf("Entropia: %.2f\n", valorEntropia);
     fprintf("Hufflen: %.2f\n", valorHuffman); 
-    fprintf("Variância: %.2f\n\n",y);
+    fprintf("Variância: %.4f\n",y);
+    fprintf("Variância: %.4f\n\n",y1);
 end
