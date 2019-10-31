@@ -7,6 +7,7 @@ function valorEntropia = helper(input,~)
     
     if (nargin ~= 1)
         bar(matrizFrequencias);
+        alfabeto=char(alfabeto);
         set(gca, 'XTick', 1:length(alfabeto), 'XTickLabel', alfabeto(:));
        
     else
@@ -21,11 +22,11 @@ function valorEntropia = helper(input,~)
     
     % A funcao hufflen() recebe um vetor das frequencias e retorna um
     % vetor com o numero de bits necessario para codificar cada simbolo
-    %bitsHufflen = hufflen(matrizFrequencias);
+    bitsHufflen = hufflen(matrizFrequencias);
     
-    %totalBits = bitsHufflen' * matrizFrequencias;
-    %valorHuffman = totalBits / totalFrequencias;
+    totalBits = bitsHufflen' * matrizFrequencias;
+    valorHuffman = totalBits / totalFrequencias;
     
     fprintf("Entropia: %.2f\n", valorEntropia);
-    %fprintf("Hufflen: %.2f\n\n", valorHuffman); 
+    fprintf("Hufflen: %.2f\n\n", valorHuffman); 
 end
