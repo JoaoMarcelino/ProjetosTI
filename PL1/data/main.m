@@ -16,7 +16,7 @@ figure(9);
 disp("Lyrics.txt");subplot(2,3,1);helper(lyrics,1);title("Lyrics");
 disp("Landscape");subplot(2,3,2);helper(landscape);title("Landscape");
 disp("MRI");subplot(2,3,3);helper(MRI);title("MRI");
-disp("MRI Black/White");subplot(2,3,4);helper(MRIBW);title("MRI Black/White");
+disp("MRI Black/White");subplot(2,3,4);helper(MRIBW,2);title("MRI Black/White");
 disp("Audio");subplot(2,3,5);helper(aud,2);title("Audio");
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
