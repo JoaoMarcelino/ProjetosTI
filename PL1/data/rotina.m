@@ -5,7 +5,6 @@
     entropiaQuery = helperRotina(query);
     posInfoColumn = 1;
     posInfoRow = 1;
-    matrizInformacoes = zeros(length(1 : step : size(target,1) - size(query,1) + 1),length(1 : step : size(target,2) - size(query,2) + 1));
     maxInfo = 0;
     
     for row = 1 : step : size(target,1) - size(query,1) + 1 
@@ -23,8 +22,6 @@
                 x = column;
                 y = row;
             end
-            matrizInformacoes(posInfoRow,posInfoColumn) = informacaoMutua;
-            
             posInfoColumn = posInfoColumn + 1;
         end
         posInfoColumn = 1;
