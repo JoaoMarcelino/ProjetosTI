@@ -1,4 +1,4 @@
-function valorEntropia = helper(input,aux)
+    function valorEntropia = helper(input,aux)
     
     % A rotina helper retorna a entropia do ficheiro e mostra a
     % distribuicao estatistica do mesmo

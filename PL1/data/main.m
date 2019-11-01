@@ -13,11 +13,11 @@ lyrics=double(lyrics);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 figure(9);
-disp("Lyrics.txt");subplot(2,3,1);helper(lyrics,1);
-disp("Landscape");subplot(2,3,2);helper(landscape); 
-disp("MRI");subplot(2,3,3);helper(MRI);
-disp("MRI Black/White");subplot(2,3,4);helper(MRIBW);
-disp("Audio");subplot(2,3,5);helper(aud,2);
+disp("Lyrics.txt");subplot(2,3,1);helper(lyrics,1);title("Lyrics");
+disp("Landscape");subplot(2,3,2);helper(landscape);title("Landscape");
+disp("MRI");subplot(2,3,3);helper(MRI);title("MRI");
+disp("MRI Black/White");subplot(2,3,4);helper(MRIBW);title("MRI Black/White");
+disp("Audio");subplot(2,3,5);helper(aud,2);title("Audio");
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -31,18 +31,18 @@ aud2=double(aud(:,1:2:end-1))*2^8 + double(aud(:,2:2:end));
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 figure(10);
-disp("Lyrics Conjunto");subplot(2,3,1);helper(lyrics2);
-disp("Landscape Conjunto");subplot(2,3,2);helper(landscape2); 
-disp("MRI Conjunto");subplot(2,3,3);helper(MRI2);
-disp("MRI Black/White Conjunto");subplot(2,3,4);helper(MRIBW2);
-disp("Audio Conjunto");subplot(2,3,5);helper(aud2);
+disp("Lyrics Conjunto");subplot(2,3,1);helper(lyrics2);title("Lyrics Conjunto");
+disp("Landscape Conjunto");subplot(2,3,2);helper(landscape2);title("Landscape Conjunto");
+disp("MRI Conjunto");subplot(2,3,3);helper(MRI2);title("MRI Conjunto");
+disp("MRI Black/White Conjunto");subplot(2,3,4);helper(MRIBW2);title("MRI Black/White Conjunto");
+disp("Audio Conjunto");subplot(2,3,5);helper(aud2);title("Audio Conjunto");
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 step = 15;
 query = imread("mi_data\query.bmp");
 i = 1;
-arrayInfoMutua = zeros([8,1]);
+arrayInfoMutua = zeros([8,1]);  
 
 targetOriginal = imread("mi_data\target_original.bmp");
 infoMutuaTargetOriginal = rotina(query,targetOriginal,step,i);
